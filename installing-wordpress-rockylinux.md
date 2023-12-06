@@ -2,7 +2,7 @@
 
 For project 2 we were asked to install WordPress via Google Cloud on another Linux distrubtion system. I decided to try this on Rocky Linux, a free, server-oriented Linux distrubtion system. This version of Linux is compatible with the CentOS ecosystem, which means that it can run most of the software packages of CentOS. CentOS stands for Community Enterprise Operating System, which is a free, open-source, platform that is derived from Redhat Linux. Redhat Linux was discontinued in 2004, but was succeeded by Red Hat Enterprise Linux (RHEL). I wanted to try this version of Linux because when I researched it, Rocky Linux had a quote that said they are "self-imposed not-for-profit" which I think is really humble and interesting. I also chose this version of Linux because I could install it using MariaDB just like project 1. 
 
-Step 1: Create a virtual Machine<
+<h1>Step 1: Create a virtual Machine</h1>
 
 In order to install a new Linux distrubtion, we must create a new virtual machine within Google Cloud. 
 
@@ -18,10 +18,10 @@ In order to install a new Linux distrubtion, we must create a new virtual machin
 	- Make sure to allow HTTP (80) and HTTPS (443)
 6) Click the "Create" button to create your VM instance
 
-Step 2: Connect to your VM
+<h1>Step 2: Connect to your VM</h1>
 	- After you have created the VM, you can now press the "SSH" button to open a new terminal in your browser
 
-Step 3: Install a LAMP Stack (Linux, Apache, MySQL, PHP)
+<h1>Step 3: Install a LAMP Stack (Linux, Apache, MySQL, PHP)</h1>
 
 1) Update your Virtual Machine instance
 	- use command: sudo dnf update
@@ -51,7 +51,7 @@ Step 3: Install a LAMP Stack (Linux, Apache, MySQL, PHP)
 8) Restart Apache
 	- use command: sudo systemctl restart httpd
 
-Step 4: Install WordPress
+<h1>Step 4: Install WordPress</h1>
 
 1) Download and Extract WordPress
 	- use commands: wget 	
