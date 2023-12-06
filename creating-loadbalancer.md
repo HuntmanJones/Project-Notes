@@ -7,9 +7,9 @@ A Load Balancer is used to distribute traffic to other servers in order to lesse
 
 <h3>Step 2: Create VM Instances</h3>
 	- use commands: 
-					`gcloud compute instance-groups unmanaged create instance-group-1 	--zone=your-zone
-					gcloud compute instance-groups unmanaged create instance-group-2 --zone=your-zone
-					gcloud compute instance-groups unmanaged create instance-group-3 --zone=your-zone`
+					`gcloud compute instance-groups unmanaged create instance-group-1 --zone=your-zone`
+					`gcloud compute instance-groups unmanaged create instance-group-2 --zone=your-zone`
+					`gcloud compute instance-groups unmanaged create instance-group-3 --zone=your-zone`
 
 <h3>Step 3: Add Instances to Instance Groups</h3>
 	- use commands: 
@@ -24,18 +24,18 @@ A Load Balancer is used to distribute traffic to other servers in order to lesse
 
 <h3>Step 5: Create a Backend Service</h3>
 	- use command: 
-					`gcloud compute backend-services create web-backend-service \
-					--protocol=HTTP --health-checks=http-basic-check --global`
+					``gcloud compute backend-services create web-backend-service \
+					--protocol=HTTP --health-checks=http-basic-check --global``
 
 	- add instance groups to the backend service:
 	- use commands: 
 					`gcloud compute backend-services add-backend web-backend-service \
-					--instance-group=instance-group-1 --instance-group-zone=your-zone --global
+					--instance-group=instance-group-1 --instance-group-zone=your-zone --global`
 
-					gcloud compute backend-services add-backend web-backend-service \
-					--instance-group=instance-group-2 --instance-group-zone=your-zone --global
+					`gcloud compute backend-services add-backend web-backend-service \
+					--instance-group=instance-group-2 --instance-group-zone=your-zone --global`
 
-					gcloud compute backend-services add-backend web-backend-service \
+					`gcloud compute backend-services add-backend web-backend-service \
 					--instance-group=instance-group-3 --instance-group-zone=your-zone --global`
 
 <h3>Step 6: Create a URL Map</h3>
