@@ -1,14 +1,14 @@
-#H1 Introduction:
+<h1>Introduction:</h1>
 
 For Project 1 the class was asked to install WordPress via our Google Cloud virtual machine. This was to be done manually to allow us to know more of the ins and outs of creating a working webpage. The components needed for the webpage to be functional include PHP, Apache2, and MariaDB. PHP is a computer language used to allow for server-side programming and communication. For PHP to work smoothly it must be configured to work with the HTTP server, Apache2. Apache2 is an HTTP server that allows other users to access certain files on the server with a proper server and internet connection, via a web browser. MariaDB on the other hand, is an open-source and secure database management software. It allows for large amounts of data to be displayed on a webpage and for tables to be created with ease. All of these components, MariaDB, PHP, and Apache2 create what is called a LAMP stack. A LAMP stack stands for Linux, Apache, MySQL, and PHP. All of these components allow users to create, manage, and host a website. 
 
-Installing and Configuring the LAMP Stack:
+<h1>Installing and Configuring the LAMP Stack:</h1>
 
-Apache2:
+<h1>Apache2:</h1>
 
 The first step to installing WordPress is to make sure the Apache Web Server is configured correctly. In order to do this we must update our system with commands: `sudo apt update` and `sudo apt -y upgrade`. These commands allow us to install any updates needed in order to install new content correctly and insure that everything will be compatible, which is easier to troublshoot. Next we must identify the specific package name that we want to install by using the command: `sudo apt search apache2 | head`. This allows us to see multiple packages that we can install and eventually find the one we need. For this project we want apache2, so we use command: `apt show apache2` in order to examine that specific package. Once we have comfirmed that we examined the correct package we must install, so we use command: `sudo apt install apache2`. Once the package is installed we must check that it was installed correctly by using command: `systemctl list-unit-files apache2.service` and `systemctl status apache2`. 
 
-PHP:
+<h1>PHP:</h1>
 
 After setting up the web server, Apache2, we must install and configure PHP so that we can change or update the webpage at any time. It must also work with apache2 so that everything is compatible and dynamic. PHP will specifically communicate with the server, apache2, and databases that are created using MariaDB or MySQL. In order to install PHP we must use the `apt` command and restart the web server simultaneously by using commands: `sudo apt install php libapache2-mod-php` and `sudo systemctl restart apache2`. Once this is done we must check if the installation was successful by using command: `systemctl status apache2`. The commands to install PHP are pretty straight-forward, but in order to properly check if it was successful we can create a file called "info.php" in the directory "cd /var/www/html/". The command to create this file in the proper directory is: "cd /var/www/html/" and "sudo nano info.php".
 Once we get to the new file screen we can add the following data: 
@@ -47,7 +47,7 @@ print_r($browser);
 
 To check if the changes were made correctly we can navigate to our external IP address. 
 
-MariaDB:
+<h1>MariaDB:</h1>
 
 In order to create databases and have it reflect on our webpage we must install and configure MariaDB. The first step is to use the `apt` command to install the MariaDB Community Server and then log into the MariaDB shell under the MariaDB root account using the following command: `sudo apt install mariadb-server mariadb-client`. In order to check if the installation was successful we can use the systemctl command: `systemctl status mariadb`. Once we confirm the install was successful we must run a post installation script that allows us to set the MariaDB root password. The script is: `sudo mysql_secure_installation`. This script will prompt us to answer a few configuration steps. We must not rush past this step and follow it verbatum. The following answers should match the following: 
 
@@ -164,7 +164,7 @@ To test the PHP syntax we must run the following commands: `sudo php -f login.ph
 
 Finally, since the LAMP Stack has been created, we can follow the steps to installing WordPress. 
 
-WordPress:
+<h1>WordPress:</h1>
 
 WordPress is a free and open source Content Management System (CMS). It allows users to create websites and edit specific components. It also supports other website content such as blogs, mail lists, media galleries, etc. It powers 43.3 percent of all of the internet's websites. We created the LAMP Stack in order to have more control and customization of our WordPress website, allowing us to store lots of information and change certain components that would be harder to do so with a default install of WordPress. If any users want to know more about WordPress or how to install it then they can visit the website provided: https://developer.wordpress.org/advanced-administration/before-install/howto-install/
 
