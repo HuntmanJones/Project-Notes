@@ -29,7 +29,7 @@ We must now create the index.php file, using commands: `cd /var/www/html/` and `
 
 Within this file we must edit it and copy this code to it and save: 
 
-`<html>
+<html>
 <head>
 <title>Broswer Detector</title>
 </head>
@@ -43,13 +43,13 @@ $browser = get_browser(null, true);
 print_r($browser);
 ?>
 </body>
-</html>`
+</html>
 
 To check if the changes were made correctly we can navigate to our external IP address. 
 
 <h1>MariaDB:</h1>
 
-In order to create databases and have it reflect on our webpage we must install and configure MariaDB. The first step is to use the `apt` command to install the MariaDB Community Server and then log into the MariaDB shell under the MariaDB root account using the following command: `sudo apt install mariadb-server mariadb-client`. In order to check if the installation was successful we can use the systemctl command: `systemctl status mariadb`. Once we confirm the install was successful we must run a post installation script that allows us to set the MariaDB root password. The script is: `sudo mysql_secure_installation`. This script will prompt us to answer a few configuration steps. We must not rush past this step and follow it verbatum. The following answers should match the following: 
+In order to create databases and have it reflect on our webpage we must install and configure MariaDB. The first step is to use the `apt` command to install the MariaDB Community Server and then log into the MariaDB shell under the MariaDB root account using the following command: `sudo apt install mariadb-server mariadb-client`. In order to check if the installation was successful we can use the `systemctl` command: `systemctl status mariadb`. Once we confirm the install was successful we must run a post installation script that allows us to set the MariaDB root password. The script is: `sudo mysql_secure_installation`. This script will prompt us to answer a few configuration steps. We must not rush past this step and follow it verbatum. The following answers should match the following: 
 
 Enter the current password for root (enter for none):
 Set root password: Y
@@ -60,7 +60,7 @@ Disallow root login remotely: Y
 Remove test database and access to it: Y
 Reload privilege tables now: Y
 
-Once these prompts have been answered we can login to the database to test it using command: "sudo su". Once we are root we must run the "show databases;" command. \q is the key to exit. We must now create a regular user and save the root for special cases, use the following command: MariaDB [(none)]> create user 'webapp'@'localhost' identified by 'XXXXXXXXX';". If "Query OK" appears then a new user has been created. The last steps are to insure that PHP and MySQL communication is supported, to do this we use the following command: "sudo apt install php-mysql". We can now restart apache2 and MariaDB with commands: "sudo systemctl restart apache2" and "sudo systemctl restart mariadb". Next we need to create a login.php file in the /var/www/html directory in order for PHP to connect to MariaDB. In doing so we need to change group ownership of the file so apache2 can read it. The following commands will help us with this: 
+Once these prompts have been answered we can login to the database to test it using command: `sudo su`. Once we are root we must run the "show databases;" command. \q is the key to exit. We must now create a regular user and save the root for special cases, use the following command: `MariaDB [(none)]> create user 'webapp'@'localhost' identified by 'XXXXXXXXX';`. If "Query OK" appears then a new user has been created. The last steps are to insure that PHP and MySQL communication is supported, to do this we use the following command: `sudo apt install php-mysql`. We can now restart apache2 and MariaDB with commands: "sudo systemctl restart apache2" and "sudo systemctl restart mariadb". Next we need to create a login.php file in the /var/www/html directory in order for PHP to connect to MariaDB. In doing so we need to change group ownership of the file so apache2 can read it. The following commands will help us with this: 
 
 `cd /var/www/html/
 sudo touch login.php
