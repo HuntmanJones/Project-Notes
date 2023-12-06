@@ -2,7 +2,7 @@
 
 For Project 1 the class was asked to install WordPress via our Google Cloud virtual machine. This was to be done manually to allow us to know more of the ins and outs of creating a working webpage. The components needed for the webpage to be functional include PHP, Apache2, and MariaDB. PHP is a computer language used to allow for server-side programming and communication. For PHP to work smoothly it must be configured to work with the HTTP server, Apache2. Apache2 is an HTTP server that allows other users to access certain files on the server with a proper server and internet connection, via a web browser. MariaDB on the other hand, is an open-source and secure database management software. It allows for large amounts of data to be displayed on a webpage and for tables to be created with ease. All of these components, MariaDB, PHP, and Apache2 create what is called a LAMP stack. A LAMP stack stands for Linux, Apache, MySQL, and PHP. All of these components allow users to create, manage, and host a website. 
 
-<h1>Installing and Configuring the LAMP Stack:</h1>
+<h2>Installing and Configuring the LAMP Stack:</h2>
 
 <h1>Apache2:</h1>
 
