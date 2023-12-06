@@ -45,8 +45,7 @@ A Load Balancer is used to distribute traffic to other servers in order to lesse
 
 <h3>Step 7: Create a Target HTTP Proxy</h3>
 	- use command: 
-					<code>gcloud compute target-http-proxies create http-lb-proxy \
-					--url-map web-map</code>
+					<code>gcloud compute target-http-proxies create http-lb-proxy \--url-map web-map</code>
 
 <h3>Step 8: Create a Global Forwarding Rule</h3>
 	- use command: 
