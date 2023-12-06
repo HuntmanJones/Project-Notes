@@ -15,7 +15,8 @@ In order to install a new Linux distrubtion, we must create a new virtual machin
 	- Choose "Rocky Linux" for the operating system
 	- Configure the boot disk (size and type), networking options, and machine type
 5) Configure the firewall rules
-	- Make sure to allow HTTP (80) and HTTPS (443) 
+	- Make sure to allow HTTP (80) and HTTPS (443)
+	- Allowing port 80 means that information between the browser and the server will be plain text, while port 443 will encrypt the information, making it more secure and more widely used.
 6) Click the "Create" button to create your VM instance
 
 <h1>Step 2: Connect to your VM</h1>
@@ -30,25 +31,26 @@ In order to install a new Linux distrubtion, we must create a new virtual machin
 	- use command: `sudo dnf install httpd`
 
 3) Start Apache and enable it on boot
+   	- This allows Apache to start as soon as you turn on your virtual machine
 	- use commands: 
 					`sudo systemctl start httpd
 					sudo systemctl enable httpd`
 
-4) Install MariaDB
+5) Install MariaDB
 	- use command: `sudo dnf install mariadb-server`
 
-5) Start MariaDB and enable it on boot
+6) Start MariaDB and enable it on boot
 	- use commands: 
 					`sudo systemctl start mariadb
 					sudo systemctl enable mariadb`
 
-6) Secure MariaDB installation
+7) Secure MariaDB installation
 	- use command: `sudo mysql_secure_installation`
 
-7) Install PHP	
+8) Install PHP	
 	- use command: `sudo dnf install php php-mysqlnd`
 
-8) Restart Apache
+9) Restart Apache
 	- use command: `sudo systemctl restart httpd`
 
 <h1>Step 4: Install WordPress</h1>
