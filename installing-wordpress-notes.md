@@ -29,7 +29,8 @@ We must now create the index.php file, using commands: `cd /var/www/html/` and `
 
 Within this file we must edit it and copy this code to it and save: 
 
-``<html>
+<code>
+<html>
 <head>
 <title>Broswer Detector</title>
 </head>
@@ -43,7 +44,8 @@ $browser = get_browser(null, true);
 print_r($browser);
 ?>
 </body>
-</html>``
+</html>
+</code>
 
 To check if the changes were made correctly we can navigate to our external IP address. 
 
