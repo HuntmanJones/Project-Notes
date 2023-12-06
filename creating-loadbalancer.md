@@ -11,7 +11,7 @@ A Load Balancer is used to distribute traffic to other servers in order to lesse
 					<p><code>gcloud compute instance-groups unmanaged create instance-group-2 --zone=your-zone</code></p>
 					<p><code>gcloud compute instance-groups unmanaged create instance-group-3 --zone=your-zone</code></p>
 
-<h3>Step 3: Add Instances to Instance Groups</h3>
+<h3>Step 3: Add Instances to Instance Groups</h3> > This allows us to control each of the VM instances as one entity
 	- use commands:
 					<p><code>gcloud compute instance-groups unmanaged add-instances instance-group-1 --instances=instance-1,instance-2,instance-3 --zone=your-zone</code></p>
 	
