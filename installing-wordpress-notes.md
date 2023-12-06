@@ -13,9 +13,9 @@ PHP:
 After setting up the web server, Apache2, we must install and configure PHP so that we can change or update the webpage at any time. It must also work with apache2 so that everything is compatible and dynamic. PHP will specifically communicate with the server, apache2, and databases that are created using MariaDB or MySQL. In order to install PHP we must use the "apt" command and restart the web server simultaneously by using commands: "sudo apt install php libapache2-mod-php" and "sudo systemctl restart apache2". Once this is done we must check if the installation was successful by using command: "systemctl status apache2". The commands to install PHP are pretty straight-forward, but in order to properly check if it was successful we can create a file called "info.php" in the directory "cd /var/www/html/". The command to create this file in the proper directory is: "cd /var/www/html/" and "sudo nano info.php".
 Once we get to the new file screen we can add the following data: 
 
-'<?php
+`<?php
 phpinfo();
-?>'
+?>`
 
 We must save this file and check the output via our external IP address for our server. We can use any internet browser to look up our IP address and visit it. If we want to comfirm what our external IP address is we can check via the google cloud console. We must navigate to our virtual machine instance and look in the "details" section and scroll until we see "Network Interfaces". Here we will see our external IP address and be able to look it up via our web browser. If PHP was installed successfully we will see the system information of the PHP install page because of the file, "info.php", that we created in order to check the installation via our external IP address. Once the installation is confirmed, we must configure a file called "index.php" that will be found by apache2 and default to that file when using our external IP address. This is because apache2 will serve files in the order that we code it for. The default file that is served by apache2 first is "index.html", but since we are using php we must have apache2 default to serve "index.php" first. The first commands that we must use are: "cd /etc/apache2/mods-enabled/" and "sudo nano dir.conf". These commands allow us to edit the "dir.conf" file that determines what file apache2 defaults to. We must change the line in the file to the following: 
 
