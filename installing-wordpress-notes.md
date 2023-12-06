@@ -80,7 +80,8 @@ $db_password = "XXXXXXXXX"; \\use your own password for "X's"
 
 After these steps are completed make sure to save the file and exit. We must now create a PHP file that will display HTML but also use PHP to interact with our MariaDB distributions database. Use the following command: `sudo nano distros.php`. Now copy the following code: 
 
-``<html>
+<code>
+<html>
 <head>
 <title>MySQL Server Example</title>
 </head>
@@ -156,7 +157,8 @@ mysqli_close($conn);
 ?>
 
 </body>
-</html>``
+</html>
+</code>
 
 Save the file and exit. 
 
