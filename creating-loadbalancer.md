@@ -8,8 +8,8 @@ A Load Balancer is used to distribute traffic to other servers in order to lesse
 <h3>Step 2: Create VM Instances</h3>
 	- use commands: 
 					<p><code>gcloud compute instance-groups unmanaged create instance-group-1 --zone=your-zone</code></p>
-					<code>gcloud compute instance-groups unmanaged create instance-group-2 --zone=your-zone</code>
-					<code>gcloud compute instance-groups unmanaged create instance-group-3 --zone=your-zone</code>
+					<p><code>gcloud compute instance-groups unmanaged create instance-group-2 --zone=your-zone</code></p>
+					<p><code>gcloud compute instance-groups unmanaged create instance-group-3 --zone=your-zone</code></p>
 
 <h3>Step 3: Add Instances to Instance Groups</h3>
 	- use commands:
