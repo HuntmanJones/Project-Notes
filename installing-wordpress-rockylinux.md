@@ -15,7 +15,7 @@ In order to install a new Linux distrubtion, we must create a new virtual machin
 	- Choose "Rocky Linux" for the operating system
 	- Configure the boot disk (size and type), networking options, and machine type
 5) Configure the firewall rules
-	- Make sure to allow HTTP (80) and HTTPS (443)
+	- Make sure to allow HTTP (80) and HTTPS (443) 
 6) Click the "Create" button to create your VM instance
 
 <h1>Step 2: Connect to your VM</h1>
