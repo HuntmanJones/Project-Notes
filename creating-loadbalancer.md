@@ -7,9 +7,9 @@ A Load Balancer is used to distribute traffic to other servers in order to lesse
 
 <h3>Step 2: Create VM Instances</h3>
 	- use commands: 
-					gcloud compute instance-groups unmanaged create instance-group-1 --zone=your-zone
+					<code>gcloud compute instance-groups unmanaged create instance-group-1 --zone=your-zone
 					gcloud compute instance-groups unmanaged create instance-group-2 --zone=your-zone
-					gcloud compute instance-groups unmanaged create instance-group-3 --zone=your-zone
+					gcloud compute instance-groups unmanaged create instance-group-3 --zone=your-zone</code>
 
 <h3>Step 3: Add Instances to Instance Groups</h3>
 	- use commands:
@@ -20,12 +20,11 @@ A Load Balancer is used to distribute traffic to other servers in order to lesse
 					gcloud compute instance-groups unmanaged add-instances instance-group-3 --instances=instance-7,instance-8,instance-9 --zone=your-zone
 
 <h3>Step 4: Create a Health Check</h3>
-	- use command: gcloud compute http-health-checks create http-basic-check
+	- use command: <code>gcloud compute http-health-checks create http-basic-check</code>
 
 <h3>Step 5: Create a Backend Service</h3>
 	- use command: 
-					gcloud compute backend-services create web-backend-service \
-					--protocol=HTTP --health-checks=http-basic-check --global
+					gcloud compute backend-services create web-backend-service \--protocol=HTTP --health-checks=http-basic-check --global
 
 	- add instance groups to the backend service:
 	- use commands: 
@@ -45,7 +44,7 @@ A Load Balancer is used to distribute traffic to other servers in order to lesse
 
 <h3>Step 8: Create a Global Forwarding Rule</h3>
 	- use command: 
-					<code>gcloud compute forwarding-rules create http-content-rule \--global --target-http-proxy=http-lb-proxy --ports=80`</code>
+					<code>gcloud compute forwarding-rules create http-content-rule \--global --target-http-proxy=http-lb-proxy --ports=80</code>
 
 <h3>Step 9: Configure DNS</h3>
 	- DNS should point to the IP address of the global forwarding rule 
