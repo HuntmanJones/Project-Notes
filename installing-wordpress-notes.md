@@ -29,23 +29,23 @@ We must now create the index.php file, using commands: `cd /var/www/html/` and `
 
 Within this file we must edit it and copy this code to it and save: 
 
-<code>
-<html>
-<head>
-<title>Broswer Detector</title>
-</head>
-<body>
-<p>You are using the following browser to view this site:</p>
 
-<?php
-echo $_SERVER['HTTP_USER_AGENT'] . "\n\n";
+    <html>
+    <head>
+    <title>Broswer Detector</title>
+    </head>
+    <body>
+    <p>You are using the following browser to view this site:</p>
 
-$browser = get_browser(null, true);
-print_r($browser);
-?>
-</body>
-</html>
-</code>
+    <?php
+    echo $_SERVER['HTTP_USER_AGENT'] . "\n\n";
+
+    $browser = get_browser(null, true);
+    print_r($browser);
+    ?>
+    </body>
+    </html>
+
 
 To check if the changes were made correctly we can navigate to our external IP address. 
 
@@ -82,85 +82,84 @@ $db_password = "XXXXXXXXX"; \\use your own password for "X's"
 
 After these steps are completed make sure to save the file and exit. We must now create a PHP file that will display HTML but also use PHP to interact with our MariaDB distributions database. Use the following command: `sudo nano distros.php`. Now copy the following code: 
 
-<code>
-<html>
-<head>
-<title>MySQL Server Example</title>
-</head>
-<body>
 
-<?php
+    <html>
+    <head>
+    <title>MySQL Server Example</title>
+    </head>
+    <body>
 
-// Load MySQL credentials
-require_once 'login.php';
+    <?php
 
-// Establish connection
-$conn = mysqli_connect($db_hostname, $db_username, $db_password) or
-  die("Unable to connect");
+    // Load MySQL credentials
+    require_once 'login.php';
 
-// Open database
-mysqli_select_db($conn, $db_database) or
-  die("Could not open database '$db_database'");
+    // Establish connection
+    $conn = mysqli_connect($db_hostname, $db_username, $db_password) or
+    die("Unable to connect");
 
-// QUERY 1
-$query1 = "show tables from $db_database";
-$result1 = mysqli_query($conn, $query1);
+    // Open database
+    mysqli_select_db($conn, $db_database) or
+    die("Could not open database '$db_database'");
 
-$tblcnt = 0;
-while($tbl = mysqli_fetch_array($result1)) {
-  $tblcnt++;
-}
+    // QUERY 1
+    $query1 = "show tables from $db_database";
+    $result1 = mysqli_query($conn, $query1);
 
-if (!$tblcnt) {
-  echo "<p>There are no tables</p>\n";
-}
-else {
-  echo "<p>There are $tblcnt tables</p>\n";
-}
+    $tblcnt = 0;
+    while($tbl = mysqli_fetch_array($result1)) {
+    $tblcnt++;
+    }
+  
+    if (!$tblcnt) {
+    echo "<p>There are no tables</p>\n";
+    }
+    else {
+    echo "<p>There are $tblcnt tables</p>\n";
+    }
 
-// Free result1 set
-mysqli_free_result($result1);
+    // Free result1 set
+    mysqli_free_result($result1);
 
-// QUERY 2
-$query2 = "select name, developer from distributions";
-$result2 = mysqli_query($conn, $query2);
+    // QUERY 2
+    $query2 = "select name, developer from distributions";
+    $result2 = mysqli_query($conn, $query2);
 
-$row = mysqli_fetch_array($result2, MYSQLI_NUM);
-printf ("%s (%s)\n", $row[0], $row[1]);
-echo "<br/>";
+    $row = mysqli_fetch_array($result2, MYSQLI_NUM);
+    printf ("%s (%s)\n", $row[0], $row[1]);
+    echo "<br/>";
 
-$row = mysqli_fetch_array($result2, MYSQLI_ASSOC);
-printf ("%s (%s)\n", $row["name"], $row["developer"]);
+    $row = mysqli_fetch_array($result2, MYSQLI_ASSOC);
+    printf ("%s (%s)\n", $row["name"], $row["developer"]);
 
-// Free result2 set
-mysqli_free_result($result2);
+    // Free result2 set
+    mysqli_free_result($result2);
 
-// Query 3
-$query3 = "select * from distributions";
-$result3 = mysqli_query($conn, $query3);
+    // Query 3
+    $query3 = "select * from distributions";
+    $result3 = mysqli_query($conn, $query3);
 
-while($row = $result3->fetch_assoc()) {
-  echo "<p>Owner " . $row["developer"] . " manages distribution " . $row["name"] . ".</p>";
-}
+    while($row = $result3->fetch_assoc()) {
+    echo "<p>Owner " . $row["developer"] . " manages distribution " . $row["name"] . ".</p>";
+    }
 
-mysqli_free_result($result3);
+    mysqli_free_result($result3);
 
-$result4 = mysqli_query($conn, $query3);
-while($row = $result4->fetch_assoc()) {
-  echo "<p>Distribution " . $row["name"] . " was released on " . $row["founded"] . ".</p>";
-}
+    $result4 = mysqli_query($conn, $query3);
+    while($row = $result4->fetch_assoc()) {
+    echo "<p>Distribution " . $row["name"] . " was released on " . $row["founded"] . ".</p>";
+    }
 
-// Free result4 set
-mysqli_free_result($result4);
+    // Free result4 set
+    mysqli_free_result($result4);
 
-/* Close connection */
-mysqli_close($conn);
+    /* Close connection */
+    mysqli_close($conn);
 
-?>
+    ?>
 
-</body>
-</html>
-</code>
+    </body>
+    </html>
 
 Save the file and exit. 
 
