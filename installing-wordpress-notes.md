@@ -6,7 +6,7 @@ For Project 1 the class was asked to install WordPress via our Google Cloud virt
 
 <h1>Apache2:</h1>
 
-The first step to installing WordPress is to make sure the Apache Web Server is configured correctly. In order to do this we must update our system with commands: `sudo apt update` and `sudo apt -y upgrade`. These commands allow us to install any updates needed in order to install new content correctly and insure that everything will be compatible, which is easier to troublshoot. Next we must identify the specific package name that we want to install by using the command: `sudo apt search apache2 | head`. This allows us to see multiple packages that we can install and eventually find the one we need. For this project we want apache2, so we use command: `apt show apache2` in order to examine that specific package. Once we have comfirmed that we examined the correct package we must install, so we use command: `sudo apt install apache2`. Once the package is installed we must check that it was installed correctly by using command: `systemctl list-unit-files apache2.service` and `systemctl status apache2`. 
+The first step to installing WordPress is to make sure the Apache Web Server is configured correctly. In order to do this we must update our system with commands: `sudo apt update` and `sudo apt -y upgrade`. These commands allow us to install any updates needed in order to install new content correctly and ensure that everything will be compatible, which is easier to troublshoot. Next we must identify the specific package name that we want to install by using the command: `sudo apt search apache2 | head`. This allows us to see multiple packages that we can install and eventually find the one we need. For this project we want apache2, so we use command: `apt show apache2` in order to examine that specific package. Once we have comfirmed that we examined the correct package we must install, so we use command: `sudo apt install apache2`. Once the package is installed we must check that it was installed correctly by using command: `systemctl list-unit-files apache2.service` and `systemctl status apache2`. 
 
 <h1>PHP:</h1>
 
@@ -29,7 +29,7 @@ We must now create the index.php file, using commands: `cd /var/www/html/` and `
 
 Within this file we must edit it and copy this code to it and save: 
 
-`<html>
+``<html>
 <head>
 <title>Broswer Detector</title>
 </head>
@@ -43,7 +43,7 @@ $browser = get_browser(null, true);
 print_r($browser);
 ?>
 </body>
-</html>`
+</html>``
 
 To check if the changes were made correctly we can navigate to our external IP address. 
 
@@ -80,7 +80,7 @@ $db_password = "XXXXXXXXX"; \\use your own password for "X's"
 
 After these steps are completed make sure to save the file and exit. We must now create a PHP file that will display HTML but also use PHP to interact with our MariaDB distributions database. Use the following command: `sudo nano distros.php`. Now copy the following code: 
 
-`<html>
+``<html>
 <head>
 <title>MySQL Server Example</title>
 </head>
@@ -156,7 +156,7 @@ mysqli_close($conn);
 ?>
 
 </body>
-</html>`
+</html>``
 
 Save the file and exit. 
 
