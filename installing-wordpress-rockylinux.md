@@ -16,7 +16,7 @@ In order to install a new Linux distrubtion, we must create a new virtual machin
 	- Configure the boot disk (size and type), networking options, and machine type
 5) Configure the firewall rules
 	- Make sure to allow HTTP (80) and HTTPS (443)
-	- Allowing port 80 means that information between the browser and the server will be plain text, while port 443 will encrypt the information, making it more secure and more widely used.
+	< Allowing port 80 means that information between the browser and the server will be plain text, while port 443 will encrypt the information, making it more secure and more widely used.
 6) Click the "Create" button to create your VM instance
 
 <h1>Step 2: Connect to your VM</h1>
