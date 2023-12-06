@@ -24,7 +24,7 @@ A Load Balancer is used to distribute traffic to other servers in order to lesse
 
 <h3>Step 5: Create a Backend Service</h3>
 	- use command: 
-					gcloud compute backend-services create web-backend-service \--protocol=HTTP --health-checks=http-basic-check --global
+					<code>gcloud compute backend-services create web-backend-service \--protocol=HTTP --health-checks=http-basic-check --global</code>
 
 	- add instance groups to the backend service:
 	- use commands: 
