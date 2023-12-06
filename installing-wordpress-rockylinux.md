@@ -24,55 +24,55 @@ In order to install a new Linux distrubtion, we must create a new virtual machin
 <h1>Step 3: Install a LAMP Stack (Linux, Apache, MySQL, PHP)</h1>
 
 1) Update your Virtual Machine instance
-	- use command: sudo dnf update
+	- use command: `sudo dnf update`
 
 2) Install Apache
-	- use command: sudo dnf install httpd
+	- use command: `sudo dnf install httpd`
 
 3) Start Apache and enable it on boot
 	- use commands: 
-					sudo systemctl start httpd
-					sudo systemctl enable httpd
+					`sudo systemctl start httpd
+					sudo systemctl enable httpd`
 
 4) Install MariaDB
-	- use command: sudo dnf install mariadb-server
+	- use command: `sudo dnf install mariadb-server`
 
 5) Start MariaDB and enable it on boot
 	- use commands: 
-					sudo systemctl start mariadb
-					sudo systemctl enable mariadb
+					`sudo systemctl start mariadb
+					sudo systemctl enable mariadb`
 
 6) Secure MariaDB installation
-	- use command: sudo mysql_secure_installation
+	- use command: `sudo mysql_secure_installation`
 
 7) Install PHP	
-	- sudo dnf install php php-mysqlnd
+	- use command: `sudo dnf install php php-mysqlnd`
 
 8) Restart Apache
-	- use command: sudo systemctl restart httpd
+	- use command: `sudo systemctl restart httpd`
 
 <h1>Step 4: Install WordPress</h1>
 
 1) Download and Extract WordPress
-	- use commands: wget 	
-							https://wordpress.org/latest.tar.gz
-							tar -xvzf latest.tar.gz
+	- use commands:  	
+					`wget https://wordpress.org/latest.tar.gz
+					tar -xvzf latest.tar.gz`
 							
 2) Move WordPress files to your Apache document root
-	- use command: sudo mv wordpress/* /var/www/html/
+	- use command: `sudo mv wordpress/* /var/www/html/`
 
 3) Set permissions
-	- use command: sudo chown -R apache:apache /var/www/html/
+	- use command: `sudo chown -R apache:apache /var/www/html/`
 
 4) Create a MySQL database and user for WordPress
 	- use commands: 	
-					mysql -u root -p
+					`mysql -u root -p`
 					
-					CREATE DATABASE wordpress;
+					`CREATE DATABASE wordpress;
 					CREATE USER 'wordpress_user'@'localhost' IDENTIFIED BY 'your_password';
 					GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpress_user'@'localhost';
 					FLUSH PRIVILEGES;
-					EXIT;
+					EXIT;`
 
 5) Configure WordPress
 	- Using your VM's external IP address, use a browser of your choice and type it into the search bar
