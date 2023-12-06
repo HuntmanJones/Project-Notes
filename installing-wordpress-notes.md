@@ -29,7 +29,7 @@ We must now create the index.php file, using commands: `cd /var/www/html/` and `
 
 Within this file we must edit it and copy this code to it and save: 
 
-<p><html>
+<html>
 <head>
 <title>Broswer Detector</title>
 </head>
@@ -47,7 +47,7 @@ print_r($browser);
 
 To check if the changes were made correctly we can navigate to our external IP address. 
 
-<h1>MariaDB:</h1>
+<h1>MariaDB:
 
 In order to create databases and have it reflect on our webpage we must install and configure MariaDB. The first step is to use the `apt` command to install the MariaDB Community Server and then log into the MariaDB shell under the MariaDB root account using the following command: `sudo apt install mariadb-server mariadb-client`. In order to check if the installation was successful we can use the `systemctl` command: `systemctl status mariadb`. Once we confirm the install was successful we must run a post installation script that allows us to set the MariaDB root password. The script is: `sudo mysql_secure_installation`. This script will prompt us to answer a few configuration steps. We must not rush past this step and follow it verbatum. The following answers should match the following: 
 
@@ -80,7 +80,7 @@ $db_password = "XXXXXXXXX"; \\use your own password for "X's"
 
 After these steps are completed make sure to save the file and exit. We must now create a PHP file that will display HTML but also use PHP to interact with our MariaDB distributions database. Use the following command: `sudo nano distros.php`. Now copy the following code: 
 
-`<html>
+`"<html>
 <head>
 <title>MySQL Server Example</title>
 </head>
@@ -156,7 +156,7 @@ mysqli_close($conn);
 ?>
 
 </body>
-</html>`
+</html>"`
 
 Save the file and exit. 
 
