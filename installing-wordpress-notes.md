@@ -182,9 +182,9 @@ The first step is to make sure that we have the proper versions of PHP and Maria
 
 Once we have created the WordPress database and the login credentials we need to create a "wp-config.php" file. This file will store the name of the database, User, and Password for the user. We can create this file with the following commands: 
 
-`cd /var/www/html/wordpress
-sudo cp wp-config-sample.php wp-config.php
-sudo nano wp-config.php`
+    cd /var/www/html/wordpress
+    sudo cp wp-config-sample.php wp-config.php
+    sudo nano wp-config.php
 
 In nano we must fill in the correct information about our database name, user, and password. We also want to disable FTP uploads on this site, so we must add the following line to the file and save: `define('FS_METHOD','direct');`.
 
