@@ -29,6 +29,9 @@ A Load Balancer is used to distribute traffic to other servers in order to lesse
      					gcloud compute http-health-checks create http-basic-check
 
 <h3>Step 5: Create a Backend Service</h3>
+> A backend service defines specific VMs and any other resources such as URL maps and HTTP proxies that interact to handle incoming traffic.
+<br>
+<br>
 - use command: 
 					
      					gcloud compute backend-services create web-backend-service \--protocol=HTTP --health-checks=http-basic-check --global
