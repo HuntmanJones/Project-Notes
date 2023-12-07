@@ -31,7 +31,6 @@ A Load Balancer is used to distribute traffic to other servers in order to lesse
 <h3>Step 5: Create a Backend Service</h3>
 > A backend service defines specific VMs and any other resources such as URL maps and HTTP proxies that interact to handle incoming traffic.
 <br>
-<br>
 - use command: 
 					
      					gcloud compute backend-services create web-backend-service \--protocol=HTTP --health-checks=http-basic-check --global
@@ -48,7 +47,6 @@ A Load Balancer is used to distribute traffic to other servers in order to lesse
 <h3>Step 6: Create a URL Map</h3>
 > A URL Map defines rules for path-based routing. It routes incoming traffic to specific backend services via URLs or hostnames. 
 <br>
-<br>
 - use command: 
 					
      					gcloud compute url-maps create web-map \--default-service web-backend-service
@@ -56,14 +54,12 @@ A Load Balancer is used to distribute traffic to other servers in order to lesse
 <h3>Step 7: Create a Target HTTP Proxy</h3>
 > A Target HTTP Proxy directs incoming HTTP or HTTPS traffic to a backend service or multiple backend services. This is important because when using multiple VM instances (backend services), the HTTP Proxy will be able to evenly spread out incoming traffic so no one server gets overwhelmed. 
 <br>
-<br>
 - use command: 
 					
      					gcloud compute target-http-proxies create http-lb-proxy \--url-map web-map
 
 <h3>Step 8: Create a Global Forwarding Rule</h3>
 > A global forwarding rule allows incoming traffic to be directed to a specific target across multiple regions. The range for global forwarding is exactly that; global.
-<br>
 <br>
 - use command: 
 
