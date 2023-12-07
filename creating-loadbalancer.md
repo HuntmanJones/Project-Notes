@@ -52,7 +52,7 @@ A Load Balancer is used to distribute traffic to other servers in order to lesse
      					gcloud compute url-maps create web-map \--default-service web-backend-service
 
 <h3>Step 7: Create a Target HTTP Proxy</h3>
-> A Target HTTP Proxy directs incoming HTTP or HTTPS traffic to a backend service or multiple backend services. This is important because when using multiple VM instances (backend services), the HTTP Proxy will be able to evenly spread out incoming traffic so no one server gets overwhelmed. 
+> A Target HTTP Proxy directs incoming HTTP or HTTPS traffic to a backend service or multiple backend services. This is important because when using multiple VM instances (backend services), the HTTP Proxy will be able to efficiently spread out incoming traffic so no one server gets overwhelmed. 
 <br>
 - use command: 
 					
