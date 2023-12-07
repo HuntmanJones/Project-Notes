@@ -15,6 +15,8 @@ For project 3 we were asked to create a load balancer. A Load Balancer is used t
 					gcloud compute instance-groups unmanaged create instance-group-3 --zone=your-zone
 
 <h3>Step 3: Add Instances to Instance Groups</h3> 
+> Adding instances to instance groups allows for greater VM management. Since each instance in an instance group has the same settings, they can be controlled as if they were one entity. 
+<br>
 - use commands:
  
 					gcloud compute instance-groups unmanaged add-instances instance-group-1 --instances=instance-1,instance-2,instance-3 --zone=your-zone
@@ -24,6 +26,8 @@ For project 3 we were asked to create a load balancer. A Load Balancer is used t
 					gcloud compute instance-groups unmanaged add-instances instance-group-3 --instances=instance-7,instance-8,instance-9 --zone=your-zone
 
 <h3>Step 4: Create a Health Check</h3>
+> A health check is necessary to assess which backend service is "healthy", and not overwhelmed with requests, to direct traffic to only healthy virtual machine instances.  
+<br>
 - use command: 
 					
      					gcloud compute http-health-checks create http-basic-check
