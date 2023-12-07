@@ -55,7 +55,7 @@ A Load Balancer is used to distribute traffic to other servers in order to lesse
 
 <h3>Step 8: Create a Global Forwarding Rule</h3>
 > A global forwarding rule allows incoming traffic to be directed to a specific target across multiple regions. The range for global forwarding is exactly that; global. 
-<P></P>
+<br>
 - use command: 
 					
      					gcloud compute forwarding-rules create http-content-rule \--global --target-http-proxy=http-lb-proxy --ports=80
