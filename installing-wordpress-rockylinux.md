@@ -14,7 +14,7 @@ In order to install a new Linux distrubtion, we must create a new virtual machin
 	- Click on the "Create" button
 	- Choose an instance name, region, and zone
 	- Choose "Rocky Linux" for the operating system
-	- Configure the boot disk (size and type), networking options, and machine type
+	- Configure the boot disk (size and type), networking options, and machine type (varies depending on computer build and project objectives)
 5) Configure the firewall rules
 	- Make sure to allow HTTP (80) and HTTPS (443)
 	 > Allowing port 80 means that information between the browser and the server will be plain text, while port 443 will encrypt the information, making it more secure and more widely used.
