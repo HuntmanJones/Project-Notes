@@ -174,11 +174,11 @@ WordPress is a free and open source Content Management System (CMS). It allows u
 The first step is to make sure that we have the proper versions of PHP and MariaDB, we can do this with the following commands: "php --version" and "mariadb --version". We must have at least PHP version 7.4, MySQL version 5.7, and/or MariaDB version 10.2 or higher. Next, we must install some PHP modules that allow WordPress to function at its fullest, we will use the following command: `sudo apt install php-curl php-xml php-imagick php-mbstring php-zip php-intl`. We must now restart Apache2 and MariaDB with these commands: `sudo systemctl restart apache2` and `sudo systemctl restart mariadb`. Next we will download and extract the WordPress software. We must do so within the "cd /var/www/html" directory. Also, we must make sure we are downloading the latest version of WordPress with the `wget` command and extract with the `tar` command:
 `cd /var/www/html`, `sudo wget https://wordpress.org/latest.tar.gz`, and `sudo tar -xzvf latest.tar.gz`. Once the WordPress software has been downloaded and extracted, we need to create a WordPress database within MariaDB by logging into the root Linux user and the MariaDB root user. We will use the following commands to do so: `sudo su" and "mariadb -u root`. These commands will put us in the MariaDB command prompt where we must enter information to create our WordPress database and user. We will enter the following information into the prompt:
 
-`create user 'wordpress'@'localhost' identified by 'XXXXXXXXX'; (create your own password)
-create database wordpress;
-grant all privileges on wordpress.* to 'wordpress'@'localhost';
-show databases;
-\q`
+    create user 'wordpress'@'localhost' identified by 'XXXXXXXXX'; (create your own password)
+    create database wordpress;
+    grant all privileges on wordpress.* to 'wordpress'@'localhost';
+    show databases;
+    \q
 
 Once we have created the WordPress database and the login credentials we need to create a "wp-config.php" file. This file will store the name of the database, User, and Password for the user. We can create this file with the following commands: 
 
