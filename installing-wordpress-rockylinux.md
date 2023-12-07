@@ -1,3 +1,4 @@
+![RockyLinux](rockylinux.jpg)
 <h1>Introduction:</h1>
 
 For project 2 we were asked to install WordPress via Google Cloud on another Linux distrubtion system. I decided to try this on Rocky Linux, a free, server-oriented Linux distrubtion system. This version of Linux is compatible with the CentOS ecosystem, which means that it can run most of the software packages of CentOS. CentOS stands for Community Enterprise Operating System, which is a free, open-source, platform that is derived from Redhat Linux. Redhat Linux was discontinued in 2004, but was succeeded by Red Hat Enterprise Linux (RHEL). I wanted to try this version of Linux because when I researched it, Rocky Linux had a quote that said they are "self-imposed not-for-profit" which I think is really humble and interesting. I also chose this version of Linux because I could install it using MariaDB just like project 1. 
