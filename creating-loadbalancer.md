@@ -49,14 +49,14 @@ A Load Balancer is used to distribute traffic to other servers in order to lesse
 
 <h3>Step 7: Create a Target HTTP Proxy</h3>
 > A Target HTTP Proxy directs incoming HTTP or HTTPS traffic to a backend service or multiple backend services. This is important because when using multiple VM instances (backend services), the HTTP Proxy will be able to evenly spread out incoming traffic so no one server gets overwhelmed. 
->
+<br>
 - use command: 
 					
      					gcloud compute target-http-proxies create http-lb-proxy \--url-map web-map
 
 <h3>Step 8: Create a Global Forwarding Rule</h3>
 > A global forwarding rule allows incoming traffic to be directed to a specific target across multiple regions. The range for global forwarding is exactly that; global.
->
+<br>
 - use command: 
 
      					gcloud compute forwarding-rules create http-content-rule \--global --target-http-proxy=http-lb-proxy --ports=80
