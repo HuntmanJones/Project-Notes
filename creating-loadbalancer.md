@@ -2,10 +2,11 @@
 
 A Load Balancer is used to distribute traffic to other servers in order to lessen the load on one single server. Requests from users can be more evenly distributed and handled efficiently. Load balancers can be hardware or software based but both use algorithms to distribute traffic effectively. Some of the algorithms that load balancers use include Round Robin, Least Conncections, IP Hash, etc. Most modern websites need multiple servers and load balancers in order to handle hundreds of thousands of user requests. Load balancers help websites output the correct information consistently to all users. In our case we will have to create 3 separate instances (VMs) with the same content and settings. 
 
-<h3>Step 1: Enable Compute Engine API</h3>
+<p><h3>Step 1: Enable Compute Engine API</h3>
 - use command:			
  
  					gcloud services enable compute.googleapis.com
+</p>
 
 <h3>Step 2: Create VM Instances</h3>
 - use commands: 
